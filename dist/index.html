@@ -13,12 +13,40 @@
   </head>
 
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h1>Blasting Off With Bootstrap</h1>
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="#" class='navbar-brand'>Blasting Off With Bootstrap</a>
+
+          <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse' aria-expanded="false" aria-controls=".navbar-collapse">
+            <span class='sr-only'>Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+        <div class="navbar-collapse collapse navbar-right">
+            <ul class="nav navbar-nav">
+            <li><a href='tickets.html'>Tickets</a></li>
+            <li><a href='stations.html'>Stations</a></li>
+            <li>
+              <!-- if user doesn't have JavaScript enabled they will be taken to about page instead of seeing dropdown menu-->
+              <a href='about.html' data-target='#' data-toggle='dropdown'>About <span class='caret'></span></a>
+              <ul class='dropdown-menu'>
+                <li><a href='story.html'>Our Story</a></li>
+                <li><a href='contact.html'>Contact Us</a></li>
+                <li class='divider'></li>
+                <li><a href='/blog'>Blog</a></li>
+                <li class='divider'></li>
+                <li><a href='#'>Twitter</a></li>
+                <li><a href='#'>Facebook</a></li>
+              </ul>
+            </li>
+          </ul>
         </div>
       </div>
+    </div>
 
       <div class="row well well-lg">
         <div class="col-md-6">
@@ -101,6 +129,85 @@
           </div>
         </div>
 
+        <div class='container'>
+          <div class='row'>
+            <div class='col-md-8  col-md-offset-1'>
+              <h2>Plan Your Trip Today!</h2>
+              <ul class="nav nav-tabs">
+                <li class="active"><a href='#time'>Today's Times</a></li>
+                <li><a href='#deals'>Hot Deals</a></li>
+                <li><a href='#forecast'>Forecast</a></li>
+              </ul>
+
+              <div class='tab-content'>
+                <div class='tab-pane fade active' id='time'>
+                  <p>Today's Time here</p>
+                </div>
+                <div class='tab-pane fade' id='deals'>
+                  <p>Deals here</p>
+                </div>
+                <div class='tab-pane fade' id='forecast'>
+                  <p>Forecast</p>
+                </div>
+              </div>
+          </div>
+
+          <div class='col-md-3'>
+          <div class='panel-group'>
+            <div class='panel panel-success'>
+              <div class='panel-heading'>
+                <h4 class='panel-title'>
+                  <a href='#systemsOperational' data-toggle="collapse" data-parent='.panel-group'>All Systems Operational</a>
+                </h4>
+              </div>
+              <div id='systemsOperational' class='panel-collapse collapse in'>
+                <div class='panel-body'>
+                  <p>All systems are operational</p>
+                  <ul class='list-unstyled'>
+                    <li><i class='glyphicon glyphicon-ok'></i>  Transporters</li>
+                    <li><i class='glyphicon glyphicon-ok'></i>  Space Elevator</li>
+                    <li><i class='glyphicon glyphicon-ok'></i>  RocketBus</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class='panel panel-warning'>
+              <div class='panel-heading'>
+                 <h4 class='panel-title'>
+                   <a href='#weatherAlert' data-toggle="collapse" data-parent='.panel-group'>Weather Alert</a>
+                 </h4>
+              </div>
+              <div id='weatherAlert' class='panel-collapse collapse'>
+                <div class='panel-body'>
+                  <p>The National Weather Service has issued a solar flare watch for the following time periods. Please plan accordingly:</p>
+                  <ul class='list-unstyled'>
+                    <li><strong>February 9th, 21:43</strong></li>
+                    <li><strong>May 18, 19:82</strong></li>
+                    <li><strong>July 4, 08:42</strong></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class='panel panel-danger'>
+              <div class='panel-heading'>
+                <h4 class='panel-title'>
+                  <a href='#transportationWarning' data-toggle="collapse" data-parent='.panel-group'>Transportation Generals Warning: Transporters</a>
+                </h4>
+              </div>
+              <div id='transportationWarning' class='panel-collapse collapse'>
+                <div class='panel-body'>
+                  <p>Technically, transporting means making a clone of yourself and killing off the other one. If you believe in a soul, you should be aware of this fact before attempting travel using a transporter.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        </div>
+      </div>
+
         <div class='footer'>
           <div class='container'>
             <div class='row'>
@@ -148,7 +255,16 @@
   </body>
 
   <!--jQuery-->
-  <script src="jquery-3.2.1.min.js"></script>
-  <!-- Latest compiled and minified JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>  <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <!--tab-selection function-->
+  <script>
+        $(function() {
+          $('.nav-tabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+          });
+        });
+  </script>
+
 </html>
